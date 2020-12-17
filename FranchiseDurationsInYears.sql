@@ -1,4 +1,4 @@
-select "franchID" as "Franchise ID", "name" as "Team Name", min("yearID") as "Start Year", max("yearID") as "Most Recent Year", count("yearID") as "Number of Teams Fielded", max("yearID") - min("yearID") as "Franchise Duration in Years"
+select "franchID", "name" as franch_name, min("yearID") as start_year, max("yearID") as end_or_most_recent_year, count("yearID") as num_years_in_MLB
 from "Teams"
-group by "Franchise ID", "Team Name"
-order by "Franchise Duration in Years" desc;
+group by "franchID", "name"
+order by count("yearID") desc

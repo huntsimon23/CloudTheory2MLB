@@ -1,3 +1,5 @@
+
+
 select "Salaries"."yearID"           as "Year",
        "Teams".name                  as "Team Name",
        min("salary")                 as "Low Salary",
